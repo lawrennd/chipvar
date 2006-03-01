@@ -1,0 +1,18 @@
+# These are files that should be packaged for the CHIPVAR software
+dir: html
+~/mlprojects/chipvar/html/index.html
+dir: data
+~/mlprojects/chipdyno/matlab/annotations2.txt
+~/mlprojects/chipdyno/matlab/Connectivity_Matrix.txt
+~/mlprojects/chipdyno/matlab/Connectivity2.txt
+~/mlprojects/chipdyno/matlab/dictionary.txt
+~/mlprojects/chipdyno/matlab/LeeChIP.txt
+~/mlprojects/chipdyno/matlab/PerGenes.txt
+~/mlprojects/chipdyno/matlab/PerTransFact.txt
+~/mlprojects/chipdyno/matlab/probeIDTu.txt
+~/mlprojects/chipdyno/matlab/SpellmanMicro.txt
+~/mlprojects/chipdyno/matlab/Trans_Names.txt
+~/mlprojects/chipdyno/matlab/Trans_Names2.txt
+~/mlprojects/chipdyno/matlab/Yeast_Connectivity.txt
+~/mlprojects/chipdyno/matlab/YeastMetabolism_exprs.txt
+~/mlprojects/chipdyno/matlab/YeastMetabolism_se.txt
