@@ -1,53 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-
 <head>
-<title>MATLAB Code for Inference of Protein Concentration and Regulatory Intensities</title>
+  <title>MATLAB Code for Inference of Protein Concentration and
+Regulatory Intensities</title>
 </head>
-
 <body>
-
-<h1>Dynamical Model for Transcription Factor Concentrations and Activities</h1>
-
-This page describes examples of how to use the Dynamical Model for Variational Inference of Protein Concentration and Regulatory Intensities detailed in <a href=""></a>. The code is available for <a href="http://ext.dcs.shef.ac.uk/~u0015/cgi-bin/downloadForm.cgi?toolbox=chipdyno">download here</a>. 
-
-
+<h1>Inference of Transcription Factor Concentrations and
+Regulatory Intensities</h1>
+This page describes examples of how to use the Dynamical Model for
+Variational Inference of Protein Concentration and Regulatory
+Intensities detailed in . The code is available for <a
+ href="http://ext.dcs.shef.ac.uk/%7Eu0015/cgi-bin/downloadForm.cgi?toolbox=chipvar">download
+here</a>.
 <h3>Release Information</h3>
-
 <p>Current release is 0.1.
-
-<p>Release 0.1 is the first release associated with the paper, containing scripts for recreating the results given.
-
+</p>
+<p>Release 0.1 is the first release associated with the paper,
+containing scripts for recreating the results given.
+</p>
 <p>The toolboxes required to run the code are listed below.</p>
-
-
 <table>
-  <tr>
-    <td width="65%"><b>Toolbox</b></td>
-    <td width="35%"><b>Version</b></td>
-  </tr>
-
-  <tr>
-    <td width="65%">
-
-<a href="http://www.dcs.shef.ac.uk/~neil/ndlutil/downloadFiles">NDLUTIL</a><br>
-
-    </td>
-    <td width="35%">
-
-0.15<br>
-
-    </td>
-
-  </tr>
+  <tbody>
+    <tr>
+      <td width="65%"><b>Toolbox</b></td>
+      <td width="35%"><b>Version</b></td>
+    </tr>
+    <tr>
+      <td width="65%"><a
+ href="http://www.dcs.shef.ac.uk/%7Eneil/ndlutil/downloadFiles">NDLUTIL</a><br>
+      </td>
+      <td width="35%">0.15<br>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-
-<p>Finally you will also need the <a href="http://www.ncrg.aston.ac.uk/netlab/">NETLAB toolbox</a> in your path.
-
+<p>Finally you will also need the <a
+ href="http://www.ncrg.aston.ac.uk/netlab/">NETLAB toolbox</a> in your
+path.
+</p>
 <h2>Results in the Paper</h2>
-
-The main scripts are <code>demTuVar</code> and <code>demSpellmanVar</code> which run the code on the metabolic and cell cycle data sets. Also of interest may be the script <code>demFakeVar</code> which
-runs the code on artificial data. The function <code>chipVarTransFact</code> computes the posterior, gene specific, transcription factor activities for a given transcription factor. 
-
+The main scripts are <code>demTuVar</code> and <code>demSpellmanVar</code>
+which run the code on the metabolic and cell cycle data sets. Also of
+interest may be the script <code>demFakeVar</code> which
+runs the code on artificial data. <code>demTuVar</code> and <code>demSpellmanVar</code>
+invoke the functions <code>chipVarEMmu</code> and <code>chipVarEM</code>
+respectively
+which compute the posterior estimates of the latent variables by
+maximising the
+variational lower bound on the likelihood. The functions used are
+different as there
+is no need to estimate the baseline expression level for cDNA array
+data such as the
+cell cycle data set. The scripts output a variable model, containing
+the parameter
+values which maximise the likelihood, and expectationsB (posterior
+expectations of
+the regulatory intensities) and expectationsC, posterior expectations
+of the protein
+concentration profiles. The function <code>chipVarEMmu</code> also
+outputs a variable
+expectationsMu containing posterior statistics for the distribution of
+the baseline
+expression levels.
+The variable expectationsC has four fields: .entropy, a number
+contatining the posterior
+entropy of the approximating distribution, .c, a matrix with as many
+rows as transcription factors and as many columns as time points, .ccT,
+a 3D array containing
+the correlations among transcription factors at each time point, and
+.cAltc, a 3D array
+containing correlations among transcription factors at consecutive time
+points. By specialising the transcription factor index one can obtain
+plots of the transcription
+factor protein concentrations with errorbars. An example is show below
+for the transcription factor ACE2 during the cell cycle.
+<center><img src="ACE2conc.png" width="50%"><br>
+Inferred protein
+concentration profile for the transcription factor ACE2 during the
+yeast cell cycle.</center>
+Similarly, expectationsB has several fields, but only two of them are
+of interest for data analysis, .b and .errorbars (the others are
+necessary for the estimation of the variational lower bound). The
+expectationsB.b variable is a matrix containing in each
+row the regulatory intensity with which a gene is affected by each
+transcription factor. Obviously most of the entries will be zero due to
+the sparsity of the network structure. The matrix
+expectationsB.errorbars
+contains the associated error bars. By specifying to a transcription
+factor, we can
+obtain a distribution of the significance levels of its regulatory
+intensities. An example of this is shown below for the transcription
+factor ACE2 during the cell cycle.
+<center><img src="ACE2hist.png" width="50%"><br>
+Significance of the
+regulatory intensities for the transcription factor ACE2 during the
+yeast cell cycle. The plot shows the ratio between gene-specific
+regulatory intensities
+and the associated noise</center>
 </body>
 </html>
