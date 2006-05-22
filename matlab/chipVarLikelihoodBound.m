@@ -1,6 +1,6 @@
 function f=chipVarLikelihoodBound(model,data,X,...
                       expectationsC, expectationsB)
-%CHIPVARLIKELIHOODBOUND variational lower bound on marginal likelihood
+% CHIPVARLIKELIHOODBOUND variational lower bound on marginal likelihood
 
 % CHIPVAR
 nGenes=size(data,1);

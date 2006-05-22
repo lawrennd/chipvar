@@ -1,4 +1,7 @@
 % DEMSPELLMANVAR demonstrates chipVar on Spellman
+
+% CHIPVAR
+
 clear all
 clear functions
 [data,X,annotation,TransNames]=chipVarLoadData();
