@@ -1,6 +1,8 @@
 # These are files that should be packaged for the CHIPVAR software
 dir: html
 ~/mlprojects/chipvar/html/index.html
+~/mlprojects/chipvar/ACE2conc.png
+~/mlprojects/chipvar/ACE2hist.png
 dir: data
 ~/mlprojects/chipdyno/matlab/annotations2.txt
 ~/mlprojects/chipdyno/matlab/Connectivity_Matrix.txt
