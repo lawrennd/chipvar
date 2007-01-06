@@ -1,5 +1,5 @@
 function expectationsC=chipVarEstepCMu(data, X, beta, Gamma, expectationsB, ...
-                                       expectationsMu)
+c                                       expectationsMu)
 
 % CHIPVARESTEPCMU variational update of expectations of C.
 
