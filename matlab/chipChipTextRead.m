@@ -1,6 +1,6 @@
 function [geneName, annotation, data] = chipChipTextRead(file1, file2)
 
-% CHIPTEXTREAD reads TXT file for the Lee ChIP data files.
+% CHIPCHIPTEXTREAD reads TXT file for the Lee ChIP data files.
 
 % CHIPVAR
 [geneName,annotation]=...

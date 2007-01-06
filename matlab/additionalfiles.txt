@@ -1,20 +1,20 @@
 # These are files that should be packaged for the CHIPVAR software
 dir: html
 ~/mlprojects/chipvar/html/index.html
-~/mlprojects/chipvar/ACE2conc.png
-~/mlprojects/chipvar/ACE2hist.png
+~/mlprojects/chipvar/html/ACE2conc.png
+~/mlprojects/chipvar/html/ACE2hist.png
 dir: data
-~/mlprojects/chipdyno/matlab/annotations2.txt
-~/mlprojects/chipdyno/matlab/Connectivity_Matrix.txt
-~/mlprojects/chipdyno/matlab/Connectivity2.txt
-~/mlprojects/chipdyno/matlab/dictionary.txt
-~/mlprojects/chipdyno/matlab/LeeChIP.txt
-~/mlprojects/chipdyno/matlab/PerGenes.txt
-~/mlprojects/chipdyno/matlab/PerTransFact.txt
-~/mlprojects/chipdyno/matlab/probeIDTu.txt
-~/mlprojects/chipdyno/matlab/SpellmanMicro.txt
-~/mlprojects/chipdyno/matlab/Trans_Names.txt
-~/mlprojects/chipdyno/matlab/Trans_Names2.txt
-~/mlprojects/chipdyno/matlab/Yeast_Connectivity.txt
-~/mlprojects/chipdyno/matlab/YeastMetabolism_exprs.txt
-~/mlprojects/chipdyno/matlab/YeastMetabolism_se.txt
+~/mlprojects/chipdyno/matlab/data/annotations2.txt
+~/mlprojects/chipdyno/matlab/data/Connectivity_Matrix.txt
+~/mlprojects/chipdyno/matlab/data/Connectivity2.txt
+~/mlprojects/chipvar/matlab/data/dictionary.txt
+~/mlprojects/chipdyno/matlab/data/LeeChIP.txt
+~/mlprojects/chipvar/matlab/data/PerGenes.txt
+~/mlprojects/chipvar/matlab/data/PerTransFact.txt
+~/mlprojects/chipvar/matlab/data/probeIDTu.txt
+~/mlprojects/chipdyno/matlab/data/SpellmanMicro.txt
+~/mlprojects/chipdyno/matlab/data/Trans_Names.txt
+~/mlprojects/chipdyno/matlab/data/Trans_Names2.txt
+~/mlprojects/chipdyno/matlab/data/Yeast_Connectivity.txt
+~/mlprojects/chipvar/matlab/data/YeastMetabolism_exprs.txt
+~/mlprojects/chipvar/matlab/data/YeastMetabolism_se.txt

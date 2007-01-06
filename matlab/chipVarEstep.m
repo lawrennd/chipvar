@@ -1,4 +1,5 @@
-function [expectationsB,expectationsC]=chipVarEstep(data,X,model, expectationsB,expectationsC,maxCounter,options)
+function [expectationsB,expectationsC] = chipVarEstep(data,X,model, expectationsB,expectationsC,maxCounter,options)
+
 % CHIPVARESTEP variational E-step for chipVar
 
 % CHIPVAR
