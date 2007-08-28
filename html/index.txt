@@ -9,7 +9,7 @@ Regulatory Intensities</h1>
 This page describes examples of how to use the Dynamical Model for
 Variational Inference of Protein Concentration and Regulatory
 Intensities detailed in . The code is available for <a
- href="http://ext.dcs.shef.ac.uk/%7Eu0015/cgi-bin/downloadForm.cgi?toolbox=chipvar">download
+ href="http://www.cs.man.ac.uk/neill-bin/software/downloadForm.cgi?toolbox=chipvar">download
 here</a>.
 <h3>Release Information</h3>
 <p>Current release is 0.11.
