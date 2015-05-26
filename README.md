@@ -5,7 +5,7 @@ This page describes examples of how to use the Dynamical Model for
 Variational Inference of Protein Concentration and Regulatory
 Intensities detailed in this paper
 
-(G. Sangunetti, N. D. Lawrence and M. Rattray (2006) Probaiblistic Inference of Transcription Factor Concentrations and Gene-Specific Regulatory Activities in Bioinformatics 22 (22) pp 2275-2281)[http://ml.sheffield.ac.uk/~neil/cgi-bin/publications/bibpage.cgi?keyName=Sanguinetti:chipvar06&printAbstract=1]
+G. Sangunetti, N. D. Lawrence and M. Rattray (2006) [Probabilistic Inference of Transcription Factor Concentrations and Gene-Specific Regulatory Activities](http://ml.sheffield.ac.uk/~neil/cgi-bin/publications/bibpage.cgi?keyName=Sanguinetti:chipvar06&printAbstract=1) in Bioinformatics 22 (22) pp 2275-2281
 
 
 ### Release Information
