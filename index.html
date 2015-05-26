@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>chipvar by lawrennd</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>chipvar</h1>
+        <p>Software for variational Inference of transcription factor activities in MATLAB.</p>
+
+        <p class="view"><a href="https://github.com/lawrennd/chipvar">View the Project on GitHub <small>lawrennd/chipvar</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/lawrennd/chipvar/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/lawrennd/chipvar/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/lawrennd/chipvar">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="inference-of-transcription-factor-concentrations-and-regulatory-intensities" class="anchor" href="#inference-of-transcription-factor-concentrations-and-regulatory-intensities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inference of Transcription Factor Concentrations and Regulatory Intensities</h1>
+
+<p>This page describes examples of how to use the Dynamical Model for
+Variational Inference of Protein Concentration and Regulatory
+Intensities detailed in this paper</p>
+
+<p>G. Sangunetti, N. D. Lawrence and M. Rattray (2006) <a href="http://ml.sheffield.ac.uk/%7Eneil/cgi-bin/publications/bibpage.cgi?keyName=Sanguinetti:chipvar06&amp;printAbstract=1">Probabilistic Inference of Transcription Factor Concentrations and Gene-Specific Regulatory Activities</a> in Bioinformatics 22 (22) pp 2275-2281</p>
+
+<h3>
+<a id="release-information" class="anchor" href="#release-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release Information</h3>
+
+<p>Current release is 0.11.</p>
+
+<p>Release 0.11 contains a bug fix for file chipVarEstepCMu.m</p>
+
+<p>Release 0.1 is the first release associated with the paper, containing
+scripts for recreating the results given.</p>
+
+<p>The toolboxes required to run the code are listed below.</p>
+
+<table>
+<thead>
+<tr>
+<th><strong>Toolbox</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/ndlutil/downloadFiles">NDLUTIL</a></td>
+<td>0.15</td>
+</tr>
+</tbody>
+</table>
+
+<p>Finally you will also need the <a href="http://www.aston.ac.uk/eas/research/groups/ncrg/resources/netlab/">NETLAB toolbox</a> in your path.</p>
+
+<h2>
+<a id="results-in-the-paper" class="anchor" href="#results-in-the-paper" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results in the Paper</h2>
+
+<p>The main scripts are <code>demTuVar</code> and <code>demSpellmanVar</code> which run the code
+on the metabolic and cell cycle data sets. Also of interest may be the
+script <code>demFakeVar</code> which runs the code on artificial data. <code>demTuVar</code>
+and <code>demSpellmanVar</code> invoke the functions <code>chipVarEMmu</code> and <code>chipVarEM</code>
+respectively which compute the posterior estimates of the latent
+variables by maximising the variational lower bound on the likelihood.
+The functions used are different as there is no need to estimate the
+baseline expression level for cDNA array data such as the cell cycle
+data set. The scripts output a variable model, containing the parameter
+values which maximise the likelihood, and expectationsB (posterior
+expectations of the regulatory intensities) and expectationsC, posterior
+expectations of the protein concentration profiles. The function
+<code>chipVarEMmu</code> also outputs a variable expectationsMu containing
+posterior statistics for the distribution of the baseline expression
+levels. The variable expectationsC has four fields: .entropy, a number
+contatining the posterior entropy of the approximating distribution, .c,
+a matrix with as many rows as transcription factors and as many columns
+as time points, .ccT, a 3D array containing the correlations among
+transcription factors at each time point, and .cAltc, a 3D array
+containing correlations among transcription factors at consecutive time
+points. By specialising the transcription factor index one can obtain
+plots of the transcription factor protein concentrations with errorbars.
+An example is show below for the transcription factor ACE2 during the
+cell cycle.</p>
+
+<p><img src="ACE2conc.png" alt=""> </p>
+
+<p>Inferred protein concentration profile for the transcription factor
+ACE2 during the yeast cell cycle.
+Similarly, expectationsB has several fields, but only two of them are of
+interest for data analysis, .b and .errorbars (the others are necessary
+for the estimation of the variational lower bound). The expectationsB.b
+variable is a matrix containing in each row the regulatory intensity
+with which a gene is affected by each transcription factor. Obviously
+most of the entries will be zero due to the sparsity of the network
+structure. The matrix <code>expectationsB.errorbars</code> contains the associated
+error bars. By specifying to a transcription factor, we can obtain a
+distribution of the significance levels of its regulatory intensities.
+An example of this is shown below for the transcription factor ACE2
+during the cell cycle.</p>
+
+<p><img src="ACE2hist.png" alt=""> </p>
+
+<p>Significance of the regulatory intensities for the transcription factor
+ACE2 during the yeast cell cycle. The plot shows the ratio between
+gene-specific regulatory intensities and the associated noise</p>
+
+<p>Page last modified on Sat Jan 6 11:44:09 GMT 2007.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/lawrennd">lawrennd</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-62968536-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
